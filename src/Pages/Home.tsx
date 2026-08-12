@@ -1,7 +1,10 @@
+import Pay from "@/components/Pay"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className="mt-20">
+      <Pay/>
+    </div>
   )
 }
 
