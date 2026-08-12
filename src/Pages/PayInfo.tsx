@@ -2,10 +2,13 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const PayInfo = () => {
-const [inputs,setInputs] = useState({})
+const [inputs,setInputs] = useState({
+    lacagta :"",
+    numberka : "",
+})
 const navigate = useNavigate()
 
-    const checkingInputs = (e)=>{
+    const checkingInputs = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
     const {name,value} = e.target
        setInputs((prev)=>({
         ...prev,
@@ -13,10 +16,10 @@ const navigate = useNavigate()
        }))
     }
 
-    const sendSubmit = (e)=>{
+    const sendSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        let lacag = Number(inputs.lacagta || 0) 
-        if(lacag < 1.25){
+        
+        if(Number(inputs.lacagta || 0) < 1.25){
             return alert("lacagta ugu yar waa 1.25")
         }
         navigate("/successPayment")
