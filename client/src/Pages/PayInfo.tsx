@@ -83,7 +83,7 @@ const navigate = useNavigate()
 
                            <div className="flex flex-col space-y-2">
                                 <label className="text-sm text-primary">Lacagta Salaxa</label>
-                                <input onChange={checkingInputs}  name="phone" type="text" placeholder="Ugu yaraan 1.25" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
+                                <input onChange={checkingInputs}  name="amount" type="text" placeholder="Ugu yaraan 1.25" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
                             </div>
 
 
