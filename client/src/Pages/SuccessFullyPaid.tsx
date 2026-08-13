@@ -9,7 +9,7 @@ const SuccessFullyPaid = () => {
             <div className="flex space-x-5">
                 <div className="hidden md:block">
                 <h3 className="text-slate-700 font-medium">Successfully Paid!</h3>
-                <p className="text-slate-500">Anyone with a link can now view this file.</p>
+                <p className="text-slate-500">.</p>
             </div>
              <div className="md:hidden block">
                 <h3 className="text-slate-700 font-medium">SuccessFully paid </h3>
