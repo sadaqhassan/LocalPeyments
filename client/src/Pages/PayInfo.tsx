@@ -1,13 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const PayInfo = () => {
 const [inputs,setInputs] = useState({
-    lacagta :"",
-    numberka : "",
+    amount:"",
+    phone: "",
+    message:""
 })
+
+
+useEffect(()=>{
+    if(inputs){
+        console.log(inputs)
+    }
+})
+
 const navigate = useNavigate()
 
+//check inputs
     const checkingInputs = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
     const {name,value} = e.target
        setInputs((prev)=>({
@@ -18,8 +28,7 @@ const navigate = useNavigate()
 
     const sendSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        
-        if(Number(inputs.lacagta || 0) < 1.25){
+        if(Number(inputs?.amount || 0) < 1.25){
             return alert("lacagta ugu yar waa 1.25")
         }
         navigate("/successPayment")
@@ -69,18 +78,18 @@ const navigate = useNavigate()
                         <form onSubmit={sendSubmit} className="flex flex-col space-y-6">
                             <div className="flex flex-col space-y-2">
                                 <label className="text-sm text-primary">EVC Plus Number</label>
-                                <input onChange={checkingInputs}  type="tel" name="numberka" placeholder="Enter Your number" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
+                                <input onChange={checkingInputs}  type="tel" name="phone" placeholder="Enter Your number" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
                             </div>
 
                            <div className="flex flex-col space-y-2">
                                 <label className="text-sm text-primary">Lacagta Salaxa</label>
-                                <input onChange={checkingInputs}  name="lacagta" type="text" placeholder="Ugu yaraan 1.25" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
+                                <input onChange={checkingInputs}  name="phone" type="text" placeholder="Ugu yaraan 1.25" className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
                             </div>
 
 
                             <div className="flex flex-col space-y-2">
                                 <label className="text-sm text-primary">Message</label>
-                                <textarea placeholder="Enter your message" className="rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400 h-24 resize-none"></textarea>
+                                <textarea onChange={checkingInputs} placeholder="Enter your message" name="message" className="rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400 h-24 resize-none"></textarea>
                             </div>
 
                             <div className="flex items-center gap-2">
