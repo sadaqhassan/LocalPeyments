@@ -1,7 +1,7 @@
 import {  Route, Routes } from "react-router-dom"
-import Home from "./Pages/Home"
 import PayInfo from "./Pages/PayInfo"
 import SuccessFullyPaid from "./Pages/SuccessFullyPaid"
+import Home from "./Pages/Home"
 
 const App = () => {
   return (
